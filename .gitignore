@@ -1,0 +1,57 @@
+# .gitignore
+
+# Build artifacts
+/build/
+/output/
+/isodir/
+/kernel.bin
+/os.iso
+/solara.iso
+/solara_bld.iso
+*.o
+*.iso
+*.bin
+
+# Object files and intermediates
+*.obj
+*.lst
+*.map
+*.sym
+
+# Editor and IDE files
+.vscode/
+.idea/
+*.swp
+*~
+*.swo
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Log files
+*.log
+
+# Temporary files
+/tmp/
+/temp/
+
+# QEMU related
+*.qcow2
+*.img
+
+# GRUB related
+/boot/
+/grub/
+
+# Dependency files
+*.d
+.deps/
+
+# Cross-compiler artifacts (if any)
+/cross-tools/
+/toolchain/

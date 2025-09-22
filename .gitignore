@@ -39,6 +39,8 @@ Thumbs.db
 # Temporary files
 /tmp/
 /temp/
+/temporary/
+*.tmp
 
 # QEMU related
 *.qcow2

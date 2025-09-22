@@ -37,7 +37,7 @@ void welcome_msg() {
     print_str("This is Solara.", 0, 0);
     print_str("", 0, 1);
     print_str("You can find Solara GitHub repository at:", 0, 2);
-    print_str("http://github.com/solara_project/solara", 0, 3);
+    print_str("http://github.com/ruvverfmb/solara", 0, 3);
     print_str("", 0, 4);
     print_str("I'd like your feedback!", 0, 5);
 }

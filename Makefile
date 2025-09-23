@@ -9,7 +9,7 @@ QEMU = qemu-system-x86_64
 
 # Compilation flags
 CFLAGS = -ffreestanding -nostdlib -fno-exceptions -fno-rtti -Wall -Wextra -m32
-LDFLAGS = -nostdlib -T src/linker.ld -melf_i386
+LDFLAGS = -nostdlib -T $(SRCDIR)/linker.ld -melf_i386
 ASFLAGS = -f elf32
 
 # Targets
@@ -17,8 +17,8 @@ TARGET = kernel.bin
 ISO = solara_bld.iso
 
 # Directories
-SRCDIR = src
-BUILDDIR = build
+SRCDIR = src/kernel
+BUILDDIR = build/kernel
 ISODIR = isodir
 
 # Source files
@@ -36,7 +36,7 @@ $(ISO): $(TARGET) | $(ISODIR)
 	@echo "Creating ISO image..."
 	@mkdir -p $(ISODIR)/boot/grub
 	@cp $(TARGET) $(ISODIR)/boot/
-	@cp $(SRCDIR)/grub.cfg $(ISODIR)/boot/grub/
+	@cp src/kernel/grub.cfg $(ISODIR)/boot/grub/
 	@$(GRUB_MKRESCUE) -o $@ $(ISODIR)
 
 # Link kernel
@@ -71,7 +71,7 @@ run: $(ISO)
 clean:
 	@echo "[Solara] reported action: clean..."
 	@echo "Cleaning build files..."
-	@rm -rf $(BUILDDIR) $(ISODIR) $(TARGET) $(ISO)
+	@rm -rf build isodir $(TARGET) $(ISO)
 
 # Full rebuild
 rebuild: clean

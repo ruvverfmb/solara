@@ -1,7 +1,7 @@
 // kernel.cpp
 
 typedef unsigned short uint16_t;
-volatile uint16_t* vga_buffer = (volatile uint16_t*)0xB8000; // 0xB000 VGA text address
+volatile uint16_t* vga_buffer = (volatile uint16_t*)0xB8000; // 0xB8000 VGA text address
 
 [[noreturn]] void halt() {
     while (1) {
